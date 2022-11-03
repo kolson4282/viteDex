@@ -1,44 +1,8 @@
 import usePokeAPI from "../../hooks/usePokeAPI";
+import { Pokemon, PokemonSpecies } from "../../Types";
 
 type Props = {
   name: string;
-};
-
-type PokemonSpecies = {
-  name: string;
-  id: number;
-  genera: {
-    genus: string;
-    language: {
-      name: string;
-      url: string;
-    };
-  }[];
-  varieties: {
-    is_default: boolean;
-    pokemon: {
-      name: string;
-      url: string;
-    };
-  }[];
-};
-
-type Pokemon = {
-  sprites: {
-    front_default: string;
-    other: {
-      "official-artwork": {
-        front_default: string;
-      };
-    };
-  };
-  types: {
-    slot: number;
-    type: {
-      name: string;
-      url: string;
-    };
-  }[];
 };
 
 const PokemonCard = ({ name }: Props) => {

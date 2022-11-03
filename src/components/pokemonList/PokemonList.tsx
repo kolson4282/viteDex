@@ -1,20 +1,11 @@
 import usePokeAPI from "../../hooks/usePokeAPI";
 import PokemonCard from "../pokemonCard/PokemonCard";
-
-type PokemonList = {
-  count: number;
-  next: string;
-  previous: string;
-  results: {
-    name: string;
-    url: string;
-  }[];
-};
+import type { PokemonSpeciesList } from "../../Types";
 
 type Props = {};
 
 const PokemonList = (props: Props) => {
-  const pokemonList = usePokeAPI<PokemonList>(
+  const pokemonList = usePokeAPI<PokemonSpeciesList>(
     "https://pokeapi.co/api/v2/pokemon-species"
   );
 
