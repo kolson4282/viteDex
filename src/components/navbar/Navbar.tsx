@@ -1,6 +1,9 @@
-type Props = {};
+type Props = {
+  next?: () => void;
+  prev?: () => void;
+};
 
-const Navbar = (props: Props) => {
+const Navbar = ({ next, prev }: Props) => {
   return (
     <nav className="navbar navbar-expand-lg sticky-top bg-light">
       <div className="container-fluid">
@@ -24,12 +27,16 @@ const Navbar = (props: Props) => {
             <li className="nav-item">
               <span className="nav-link">Random</span>
             </li>
-            <li className="nav-item">
-              <span className="nav-link">Previous</span>
-            </li>
-            <li className="nav-item" id="next">
-              <span className="nav-link">Next</span>
-            </li>
+            {prev && (
+              <li onClick={prev} className="nav-item">
+                <span className="nav-link">Previous</span>
+              </li>
+            )}
+            {next && (
+              <li onClick={next} className="nav-item" id="next">
+                <span className="nav-link">Next</span>
+              </li>
+            )}
           </ul>
           <form className="d-flex" role="search">
             <input
