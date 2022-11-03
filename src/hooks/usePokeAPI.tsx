@@ -8,8 +8,9 @@ const usePokeAPI = <T,>(url: string) => {
   return query;
 };
 
-const getPokemon = <T,>(url: string): Promise<T> => {
-  return fetch(url).then((r) => r.json() as T);
+const getPokemon = async <T,>(url: string): Promise<T> => {
+  const r = await fetch(url);
+  return r.json() as T;
 };
 
 export default usePokeAPI;
