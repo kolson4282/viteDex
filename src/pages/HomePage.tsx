@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "../components/navbar/Navbar";
 import PokemonList from "../components/pokemonList/PokemonList";
-import usePokeAPI from "../hooks/usePokeAPI";
+import { usePokeAPIURL } from "../hooks/usePokeAPI";
 import { PokemonSpeciesList } from "../Types";
 
 type Props = {};
@@ -9,7 +9,7 @@ type Props = {};
 const HomePage = (props: Props) => {
   const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon-species`);
 
-  const pokemonList = usePokeAPI<PokemonSpeciesList>(url);
+  const pokemonList = usePokeAPIURL<PokemonSpeciesList>(url, ["species-list"]);
 
   if (pokemonList.isLoading) return <p>Loading...</p>;
   if (pokemonList.error || !pokemonList.data) return <p>Error...</p>;

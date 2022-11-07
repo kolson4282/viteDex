@@ -1,12 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
 import { PokemonSpecies } from "../Types";
-import getPokemon from "../utils/getPokemon";
-import { BASE_URL } from "./usePokeAPI";
+import { BASE_URL, usePokeAPIURL } from "./usePokeAPI";
 
 const usePokemonSpeciesInfo = (pokemon: string) => {
-  const pokemonInfo = useQuery<PokemonSpecies, Error>(
-    ["pokemon-species", pokemon],
-    () => getPokemon<PokemonSpecies>(BASE_URL + "pokemon-species/" + pokemon)
+  const pokemonInfo = usePokeAPIURL<PokemonSpecies>(
+    BASE_URL + "pokemon-species/" + pokemon,
+    ["pokemon-species", pokemon]
   );
   return pokemonInfo;
 };
