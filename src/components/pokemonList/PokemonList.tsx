@@ -1,4 +1,4 @@
-import PokemonCard from "../pokemonCard/PokemonCard";
+import PokemonCard from "./PokemonCard";
 import type { PokemonSpeciesList } from "../../Types";
 
 type Props = {

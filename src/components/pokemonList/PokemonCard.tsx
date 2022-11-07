@@ -1,17 +1,13 @@
-import usePokeAPI from "../../hooks/usePokeAPI";
-import { Pokemon, PokemonSpecies } from "../../Types";
+import usePokemonInfo from "../../hooks/usePokemonInfo";
+import usePokemonSpeciesInfo from "../../hooks/usePokemonSpeciesInfo";
 
 type Props = {
   name: string;
 };
 
 const PokemonCard = ({ name }: Props) => {
-  const species = usePokeAPI<PokemonSpecies>(
-    "https://pokeapi.co/api/v2/pokemon-species/" + name
-  );
-  const pokemon = usePokeAPI<Pokemon>(
-    "https://pokeapi.co/api/v2/pokemon/" + name
-  );
+  const species = usePokemonSpeciesInfo(name);
+  const pokemon = usePokemonInfo(name);
 
   if (species.isLoading || pokemon.isLoading) return <p>Loading...</p>;
   if (!species.data || !pokemon.data) return <p>No Data Returned</p>;
