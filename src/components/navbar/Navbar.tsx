@@ -22,19 +22,19 @@ const Navbar = ({ next, prev }: Props) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <span className="nav-link"> Home </span>
+              <a className="nav-link"> Home </a>
             </li>
             <li className="nav-item">
-              <span className="nav-link">Random</span>
+              <a className="nav-link">Random</a>
             </li>
             {prev && (
               <li onClick={prev} className="nav-item">
-                <span className="nav-link">Previous</span>
+                <a className="nav-link">Previous</a>
               </li>
             )}
             {next && (
               <li onClick={next} className="nav-item" id="next">
-                <span className="nav-link">Next</span>
+                <a className="nav-link">Next</a>
               </li>
             )}
           </ul>

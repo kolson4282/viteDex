@@ -9,7 +9,7 @@ type Props = {};
 const HomePage = (props: Props) => {
   const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon-species`);
 
-  const pokemonList = usePokeAPIURL<PokemonSpeciesList>(url, ["species-list"]);
+  const pokemonList = usePokeAPIURL<PokemonSpeciesList>(url);
 
   if (pokemonList.isLoading) return <p>Loading...</p>;
   if (pokemonList.error || !pokemonList.data) return <p>Error...</p>;
