@@ -1,5 +1,5 @@
 import { Pokemon } from "../Types";
-import { BASE_URL, usePokeAPIURL } from "./usePokeAPI";
+import usePokeAPIURL, { BASE_URL } from "./usePokeAPI";
 
 const usePokemonInfo = (pokemon: string) => {
   const pokemonSpeciesInfo = usePokeAPIURL<Pokemon>(
