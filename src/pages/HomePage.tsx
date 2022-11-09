@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from "../components/navbar/Navbar";
 import PokemonList from "../components/pokemonList/PokemonList";
-import { usePokeAPIURL } from "../hooks/usePokeAPI";
+import usePokeAPIURL from "../hooks/usePokeAPI";
 import { PokemonSpeciesList } from "../Types";
 
 type Props = {};
